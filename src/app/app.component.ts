@@ -1,12 +1,23 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { RouterOutlet, RouterLink } from '@angular/router';
+import { TitleService } from './services/title.service';
+import { Observable } from 'rxjs';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet,RouterLink,AsyncPipe],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
-export class AppComponent {
-  title = 'tips-phone';
+export class AppComponent implements OnInit {
+  title: Observable<string | null>;
+  isMenuOpen: boolean = false;
+
+  constructor(private titleService: TitleService) {
+    titleService.setTitle('Tips');
+    this.title = titleService.title$;
+  }
+
+  ngOnInit() {}
 }

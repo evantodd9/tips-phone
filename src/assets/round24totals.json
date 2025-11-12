@@ -1,0 +1,38 @@
+[
+  {
+    "name": "ev",
+    "tips": 8,
+    "bets": 0,
+    "return": 0
+  },
+  {
+    "name": "punk",
+    "tips": 8,
+    "bets": 0,
+    "return": 0
+  },
+  {
+    "name": "purse",
+    "tips": 7,
+    "bets": 0,
+    "return": 0
+  },
+  {
+    "name": "smith",
+    "tips": 7,
+    "bets": 0,
+    "return": 0
+  },
+  {
+    "name": "tip-o-meter",
+    "tips": 7,
+    "bets": 186.00,
+    "return": 212.97
+  },
+  {
+    "name": "wigg",
+    "tips": 7,
+    "bets": 198.00,
+    "return": 198.00
+  }
+]

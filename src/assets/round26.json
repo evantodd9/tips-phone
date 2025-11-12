@@ -1,0 +1,14 @@
+[
+  {
+    "home":"Adelaide","away":"Collingwood","date":"Thu 04/09","hprice":" 1.58","aprice":" 2.39","ground":"Adelaide Oval"
+  },
+  {
+    "home":"Geelong","away":"Brisbane","date":"Fri 05/09","hprice":" 1.64","aprice":" 2.27","ground":"MCG"
+  },
+  {
+    "home":"Fremantle","away":"Gold Coast","date":"Sat 06/09","hprice":" 1.53","aprice":" 2.51","ground":"Perth"
+  },
+  {
+    "home":"GWS","away":"Hawthorn","date":"Sat 06/09","hprice":" 1.79","aprice":" 2.07","ground":"Sydney Showground"
+  }
+]
