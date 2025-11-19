@@ -1,0 +1,17 @@
+[
+{
+"home":"Adelaide","away":"Geelong","date":"Thu 04/06","hprice":" 0.00","aprice":" 0.00","ground":"Adelaide Oval"},
+{
+"home":"Hawthorn","away":"Bulldogs","date":"Fri 05/06","hprice":" 0.00","aprice":" 0.00","ground":"MCG"},
+{
+"home":"Gold Coast","away":"Brisbane","date":"Sat 06/06","hprice":" 0.00","aprice":" 0.00","ground":"Gold Coast"},
+{
+"home":"North Melbourne","away":"Fremantle","date":"Sat 06/06","hprice":" 0.00","aprice":" 0.00","ground":"Bunbury"},
+{
+"home":"West Coast","away":"Port Adelaide","date":"Sat 06/06","hprice":" 0.00","aprice":" 0.00","ground":"Perth"},
+{
+"home":"Essendon","away":"Carlton","date":"Sun 07/06","hprice":" 0.00","aprice":" 0.00","ground":"MCG"},
+{
+"home":"Sydney","away":"St Kilda","date":"Sun 07/06","hprice":" 0.00","aprice":" 0.00","ground":"SCG"},
+{
+"home":"Collingwood","away":"Melbourne","date":"Mon 08/06","hprice":" 0.00","aprice":" 0.00","ground":"MCG"}]

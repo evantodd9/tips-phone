@@ -1,0 +1,19 @@
+[
+{
+"home":"Adelaide","away":"Carlton","date":"Thu 09/04","hprice":" 0.00","aprice":" 0.00","ground":"Adelaide Oval"},
+{
+"home":"Collingwood","away":"Fremantle","date":"Fri 10/04","hprice":" 0.00","aprice":" 0.00","ground":"Adelaide Oval"},
+{
+"home":"Essendon","away":"Melbourne","date":"Sat 11/04","hprice":" 0.00","aprice":" 0.00","ground":"Adelaide Oval"},
+{
+"home":"Hawthorn","away":"Bulldogs","date":"Sat 11/04","hprice":" 0.00","aprice":" 0.00","ground":"Adelaide Oval"},
+{
+"home":"North Melbourne","away":"Brisbane","date":"Sat 11/04","hprice":" 0.00","aprice":" 0.00","ground":"Barossa"},
+{
+"home":"Sydney","away":"Gold Coast","date":"Sat 11/04","hprice":" 0.00","aprice":" 0.00","ground":"Norwood"},
+{
+"home":"Geelong","away":"West Coast","date":"Sun 12/04","hprice":" 0.00","aprice":" 0.00","ground":"Norwood"},
+{
+"home":"GWS","away":"Richmond","date":"Sun 12/04","hprice":" 0.00","aprice":" 0.00","ground":"Barossa"},
+{
+"home":"Port Adelaide","away":"St Kilda","date":"Sun 12/04","hprice":" 0.00","aprice":" 0.00","ground":"Adelaide Oval"}]

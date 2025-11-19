@@ -1,0 +1,19 @@
+[
+{
+"home":"Carlton","away":"Richmond","date":"Thu 12/03","hprice":" 0.00","aprice":" 0.00","ground":"MCG"},
+{
+"home":"Essendon","away":"Hawthorn","date":"Fri 13/03","hprice":" 0.00","aprice":" 0.00","ground":"MCG"},
+{
+"home":"Bulldogs","away":"GWS","date":"Sat 14/03","hprice":" 0.00","aprice":" 0.00","ground":"Docklands"},
+{
+"home":"Collingwood","away":"Adelaide","date":"Sat 14/03","hprice":" 0.00","aprice":" 0.00","ground":"MCG"},
+{
+"home":"Geelong","away":"Fremantle","date":"Sat 14/03","hprice":" 0.00","aprice":" 0.00","ground":"Geelong"},
+{
+"home":"Sydney","away":"Brisbane","date":"Sat 14/03","hprice":" 0.00","aprice":" 0.00","ground":"SCG"},
+{
+"home":"Gold Coast","away":"West Coast","date":"Sun 15/03","hprice":" 0.00","aprice":" 0.00","ground":"Gold Coast"},
+{
+"home":"Melbourne","away":"St Kilda","date":"Sun 15/03","hprice":" 0.00","aprice":" 0.00","ground":"MCG"},
+{
+"home":"North Melbourne","away":"Port Adelaide","date":"Sun 15/03","hprice":" 0.00","aprice":" 0.00","ground":"Docklands"}]

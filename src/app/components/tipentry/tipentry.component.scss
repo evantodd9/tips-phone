@@ -1,0 +1,38 @@
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 16px;
+  min-width: 350px; // Ensure table doesn't get too narrow
+
+  th, td {
+    border: 0px;
+    padding: 4px;
+    text-align: left;
+  }
+
+  th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+    color: #333;
+  }
+
+  // Mobile-friendly text size
+  td {
+    font-size: 0.7rem;
+  }
+
+  tr {
+    background: none;
+  }
+}
+
+.question-card {
+  margin-bottom: 20px;
+  padding: 20px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background-color: #fcfcfc;
+}
+.radio-option input[type='radio']:checked + label {
+  transform: scale(1.05);
+}

@@ -1,0 +1,15 @@
+[
+{
+"home":"Geelong","away":"Adelaide","date":"Thu 26/03","hprice":" 0.00","aprice":" 0.00","ground":"Geelong"},
+{
+"home":"Collingwood","away":"GWS","date":"Fri 27/03","hprice":" 0.00","aprice":" 0.00","ground":"Docklands"},
+{
+"home":"Essendon","away":"North Melbourne","date":"Sat 28/03","hprice":" 0.00","aprice":" 0.00","ground":"Docklands"},
+{
+"home":"Fremantle","away":"Richmond","date":"Sat 28/03","hprice":" 0.00","aprice":" 0.00","ground":"Perth"},
+{
+"home":"St Kilda","away":"Brisbane","date":"Sat 28/03","hprice":" 0.00","aprice":" 0.00","ground":"Docklands"},
+{
+"home":"Carlton","away":"Melbourne","date":"Sun 29/03","hprice":" 0.00","aprice":" 0.00","ground":"MCG"},
+{
+"home":"Port Adelaide","away":"West Coast","date":"Sun 29/03","hprice":" 0.00","aprice":" 0.00","ground":"Adelaide Oval"}]

@@ -1,0 +1,19 @@
+[
+{
+"home":"Bulldogs","away":"Sydney","date":"Thu 23/04","hprice":" 0.00","aprice":" 0.00","ground":"Docklands"},
+{
+"home":"Richmond","away":"Melbourne","date":"Fri 24/04","hprice":" 0.00","aprice":" 0.00","ground":"MCG"},
+{
+"home":"Essendon","away":"Collingwood","date":"Sat 25/04","hprice":" 0.00","aprice":" 0.00","ground":"MCG"},
+{
+"home":"Fremantle","away":"Carlton","date":"Sat 25/04","hprice":" 0.00","aprice":" 0.00","ground":"Perth"},
+{
+"home":"Hawthorn","away":"Gold Coast","date":"Sat 25/04","hprice":" 0.00","aprice":" 0.00","ground":"Launceston"},
+{
+"home":"Port Adelaide","away":"Geelong","date":"Sat 25/04","hprice":" 0.00","aprice":" 0.00","ground":"Adelaide Oval"},
+{
+"home":"Brisbane","away":"Adelaide","date":"Sun 26/04","hprice":" 0.00","aprice":" 0.00","ground":"Gabba"},
+{
+"home":"GWS","away":"North Melbourne","date":"Sun 26/04","hprice":" 0.00","aprice":" 0.00","ground":"Canberra"},
+{
+"home":"St Kilda","away":"West Coast","date":"Sun 26/04","hprice":" 0.00","aprice":" 0.00","ground":"Docklands"}]

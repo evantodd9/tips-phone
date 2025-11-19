@@ -1,0 +1,15 @@
+[
+{
+"home":"St Kilda","away":"Hawthorn","date":"Thu 28/05","hprice":" 0.00","aprice":" 0.00","ground":"Docklands"},
+{
+"home":"Carlton","away":"Geelong","date":"Fri 29/05","hprice":" 0.00","aprice":" 0.00","ground":"MCG"},
+{
+"home":"Brisbane","away":"Fremantle","date":"Sat 30/05","hprice":" 0.00","aprice":" 0.00","ground":"Gabba"},
+{
+"home":"Bulldogs","away":"Collingwood","date":"Sat 30/05","hprice":" 0.00","aprice":" 0.00","ground":"Docklands"},
+{
+"home":"Sydney","away":"Richmond","date":"Sat 30/05","hprice":" 0.00","aprice":" 0.00","ground":"SCG"},
+{
+"home":"Melbourne","away":"GWS","date":"Sun 31/05","hprice":" 0.00","aprice":" 0.00","ground":"Darwin"},
+{
+"home":"West Coast","away":"Essendon","date":"Sun 31/05","hprice":" 0.00","aprice":" 0.00","ground":"Perth"}]

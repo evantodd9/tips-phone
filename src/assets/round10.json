@@ -1,0 +1,19 @@
+[
+{
+"home":"Brisbane","away":"Geelong","date":"Thu 14/05","hprice":" 0.00","aprice":" 0.00","ground":"Gabba"},
+{
+"home":"Gold Coast","away":"Port Adelaide","date":"Fri 15/05","hprice":" 0.00","aprice":" 0.00","ground":"Darwin"},
+{
+"home":"Sydney","away":"Collingwood","date":"Fri 15/05","hprice":" 0.00","aprice":" 0.00","ground":"SCG"},
+{
+"home":"Adelaide","away":"North Melbourne","date":"Sat 16/05","hprice":" 0.00","aprice":" 0.00","ground":"Adelaide Oval"},
+{
+"home":"Carlton","away":"Bulldogs","date":"Sat 16/05","hprice":" 0.00","aprice":" 0.00","ground":"Docklands"},
+{
+"home":"Melbourne","away":"Hawthorn","date":"Sat 16/05","hprice":" 0.00","aprice":" 0.00","ground":"MCG"},
+{
+"home":"Essendon","away":"Fremantle","date":"Sun 17/05","hprice":" 0.00","aprice":" 0.00","ground":"MCG"},
+{
+"home":"St Kilda","away":"Richmond","date":"Sun 17/05","hprice":" 0.00","aprice":" 0.00","ground":"Docklands"},
+{
+"home":"West Coast","away":"GWS","date":"Sun 17/05","hprice":" 0.00","aprice":" 0.00","ground":"Perth"}]

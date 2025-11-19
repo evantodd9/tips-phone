@@ -1,0 +1,19 @@
+[
+{
+"home":"Fremantle","away":"Hawthorn","date":"Thu 07/05","hprice":" 0.00","aprice":" 0.00","ground":"Perth"},
+{
+"home":"Brisbane","away":"Carlton","date":"Fri 08/05","hprice":" 0.00","aprice":" 0.00","ground":"Gabba"},
+{
+"home":"Port Adelaide","away":"Bulldogs","date":"Fri 08/05","hprice":" 0.00","aprice":" 0.00","ground":"Adelaide Oval"},
+{
+"home":"Geelong","away":"Collingwood","date":"Sat 09/05","hprice":" 0.00","aprice":" 0.00","ground":"MCG"},
+{
+"home":"Gold Coast","away":"St Kilda","date":"Sat 09/05","hprice":" 0.00","aprice":" 0.00","ground":"Darwin"},
+{
+"home":"GWS","away":"Essendon","date":"Sat 09/05","hprice":" 0.00","aprice":" 0.00","ground":"Sydney Showground"},
+{
+"home":"North Melbourne","away":"Sydney","date":"Sat 09/05","hprice":" 0.00","aprice":" 0.00","ground":"Docklands"},
+{
+"home":"Melbourne","away":"West Coast","date":"Sun 10/05","hprice":" 0.00","aprice":" 0.00","ground":"Docklands"},
+{
+"home":"Richmond","away":"Adelaide","date":"Sun 10/05","hprice":" 0.00","aprice":" 0.00","ground":"MCG"}]
