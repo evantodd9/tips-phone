@@ -6,7 +6,7 @@
       class="flex justify-between items-center p-4 cursor-pointer select-none"
       (click)="toggleDetails(record.id)"
       [ngClass]="{
-        'bg-gray-100 dark:bg-gray-900/50': selectedId === record.id,
+        'bg-gray-100 dark:bg-gray-900 border-gray-900': selectedId === record.id,
         'bg-white dark:bg-gray-800': selectedId !== record.id
       }">
 
@@ -24,10 +24,10 @@
       </span>
     </div>
 
-    <div *ngIf="selectedId === record.id" class="p-4 bg-white border-t border-gray-100">
+    <div *ngIf="selectedId === record.id" class="p-2 bg-white border-t border-gray-100">
       <div *ngFor="let child of record.games; let isLast = last"
-           class="pt-2 pb-3"
-           [ngClass]="{ 'border-b border-dashed border-gray-200 mb-3': !isLast }">
+           class="pt-1 pb-2"
+           [ngClass]="{ 'border-b border-dashed border-gray-300 mb-3': !isLast }">
 
         <div class="grid grid-cols-2">
           <p class="text-sm text-gray-500">{{ child.round }} {{ child.year }}</p>
@@ -39,7 +39,7 @@
           <p class="font-semibold text-lg">
             <span [ngClass]="{'text-blue-600': child.winner === record.home,
                               'text-red-600': child.winner === record.away,
-                              'text-gray-600': child.winner !== record.home && child.winner !== record.away }">{{ child.winner }} by {{ child.margin }}</span>
+                              'text-gray-600': child.winner !== record.home && child.winner !== record.away }">{{ child.result }}</span>
           </p>
         </div>
       </div>
