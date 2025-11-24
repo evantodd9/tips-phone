@@ -1,0 +1,48 @@
+<div class="p-4 sm:p-6 max-w-lg mx-auto">
+  <div *ngFor="let record of lastmet"
+       class="mb-3 rounded-lg shadow-md overflow-hidden bg-white border border-gray-200 hover:shadow-lg transition duration-200">
+
+    <div
+      class="flex justify-between items-center p-4 cursor-pointer select-none"
+      (click)="toggleDetails(record.id)"
+      [ngClass]="{
+        'bg-gray-100 dark:bg-gray-900/50': selectedId === record.id,
+        'bg-white dark:bg-gray-800': selectedId !== record.id
+      }">
+
+      <div class="truncate pr-4">
+        <p class="text-lg font-semibold text-gray-700 dark:text-gray-300 mt-1">
+          {{ record.home }} v {{ record.away }} <span class="font-medium text-white-900">{{ record.results }}</span>
+        </p>
+      </div>
+
+      <span class="text-xl text-blue-500 transition-transform duration-300"
+            [ngClass]="{ 'rotate-180': selectedId === record.id }">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+          <path fill-rule="evenodd" d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
+        </svg>
+      </span>
+    </div>
+
+    <div *ngIf="selectedId === record.id" class="p-4 bg-white border-t border-gray-100">
+      <div *ngFor="let child of record.games; let isLast = last"
+           class="pt-2 pb-3"
+           [ngClass]="{ 'border-b border-dashed border-gray-200 mb-3': !isLast }">
+
+        <div class="grid grid-cols-2">
+          <p class="text-sm text-gray-500">{{ child.round }} {{ child.year }}</p>
+          <p class="text-sm text-gray-500">{{ child.ground }}</p>
+          <p class="font-semibold">{{ child.home }}</p>
+          <p class="font-semibold">{{ child.away }}</p>
+          <p>{{ child.hscore }}</p>
+          <p>{{ child.ascore }}</p>
+          <p class="font-semibold text-lg">
+            <span [ngClass]="{'text-blue-600': child.winner === record.home,
+                              'text-red-600': child.winner === record.away,
+                              'text-gray-600': child.winner !== record.home && child.winner !== record.away }">{{ child.winner }} by {{ child.margin }}</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

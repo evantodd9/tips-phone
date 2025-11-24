@@ -23,7 +23,12 @@ export class RoundTotalsComponent implements OnInit {
     private masterService: MasterService) {}
 
   ngOnInit(): void {
-    this.round = this.masterService.getRound() - 1;
+    if (this.masterService.getRound() == 0) {
+      this.round = 0;
+    }
+    else {
+      this.round = this.masterService.getRound() - 1;
+    }
     this.max = this.round;
     this.dataService.getRoundTotals(this.round).subscribe(items => {
       this.roundTotals = items;

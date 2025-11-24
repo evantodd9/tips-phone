@@ -151,7 +151,8 @@ export class TipentryComponent implements OnInit {
     else {
       this.account = 0;
     }
-    console.log(this.selectedUser + " " + this.account);
+    this.tips.set([]);
+    this.bets.set([]);
   }
 
   getTipText(gameId: string): string {

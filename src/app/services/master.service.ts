@@ -9,11 +9,13 @@ export class MasterService {
   round: number;
   max: number;
   users: string[];
+  loser: string;
 
   constructor(private dataService: DataService) {
     this.round = 1;
     this.max = 25;
     this.users = [];
+    this.loser = '';
   }
 
   initialize(): void {
@@ -22,6 +24,7 @@ export class MasterService {
         next: (m) => {
           this.round = m.round;
           this.max = m.max;
+          this.loser = m.loser;
         }
       }
     );
@@ -43,6 +46,10 @@ export class MasterService {
 
   getMax(): number {
     return this.max;
+  }
+
+  getLoser(): string {
+    return this.loser;
   }
 
   getUsers(): string[] {

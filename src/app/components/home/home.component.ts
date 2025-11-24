@@ -12,6 +12,8 @@ import { MasterService } from '../../services/master.service';
 })
 export class HomeComponent implements OnInit {
   tipsTotal: TipsTotal[] = [];
+  loser: string = '';
+
   constructor(
     private dataService: DataService,
     private titleService: TitleService,
@@ -24,6 +26,7 @@ export class HomeComponent implements OnInit {
       this.tipsTotal = items;
     });
     this.titleService.setTitle('Tips');
+    this.loser = 'assets/losers/' + this.masterService.getLoser() + '.jpg';
   }
 
 

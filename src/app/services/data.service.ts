@@ -1,6 +1,7 @@
 import {inject, Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable, firstValueFrom} from 'rxjs';
+import {map} from 'rxjs/operators';
 
 export interface Master {
   round: number,
@@ -33,6 +34,27 @@ export interface Game {
 
 export interface User {
   name: string;
+}
+
+export interface LastMetGames {
+  round: string;
+  year: number;
+  home: string;
+  hscore: string;
+  away: string;
+  ascore: string;
+  winner: string;
+  margin: number;
+  ground: string;
+  result: string;
+}
+
+export interface LastMet {
+  id: number;
+  home: string;
+  away: string;
+  results: string;
+  games: LastMetGames[];
 }
 
 @Injectable({
@@ -70,5 +92,19 @@ export class DataService {
   getUsers(): Observable<User[]> {
     const userUrl = 'assets/users.json';
     return this.http.get<User[]>(userUrl);
+  }
+
+  getLastMet(): Observable<LastMet[]> {
+    const lastmetUrl = 'assets/lastmet.json';
+    return this.http.get<LastMet[]>(lastmetUrl).pipe(
+      map(dataArray => {
+        return dataArray.map((record, index) => {
+          return {
+            ...record,
+            id: index + 1
+          } as LastMet;
+        });
+      })
+    );
   }
 }
