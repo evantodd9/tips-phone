@@ -1,11 +1,13 @@
 import { ChangeDetectionStrategy, Component, computed, signal, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TitleService } from '../../services/title.service';
-import { DataService, Game, TipsTotal } from '../../services/data.service';
+import { DataService, TipsTotal } from '../../services/data.service';
 import { MasterService } from '../../services/master.service';
 import { FormsModule } from '@angular/forms';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 type Team = 'home' | 'away';
+type FormPayload = Record<string,any>;
 
 interface UserTip {
   gameId: string;
@@ -89,7 +91,8 @@ export class TipentryComponent implements OnInit {
   submissionMessage = signal<string | null>(null);
   submissionSuccess = signal<boolean>(false);
 
-  private formspreeUrl = 'formspree';
+  //private formsUrl = 'https://formsubmit.co/ajax/8eec11a7bd82a5cceffee51c2e6149e4';
+  private formsUrl = 'https://formsubmit.co/ajax/ejt@qad.com';
   private userDetails : TipsTotal[] = [];
 
   totalTips = computed(() => this.tips().length);
@@ -113,7 +116,8 @@ export class TipentryComponent implements OnInit {
   constructor(
     private dataService: DataService,
     private titleService: TitleService,
-    private masterService: MasterService) {}
+    private masterService: MasterService,
+    private http: HttpClient) {}
 
   ngOnInit(): void {
     this.round = this.masterService.getRound();
@@ -283,36 +287,53 @@ export class TipentryComponent implements OnInit {
     this.currentBetError.set(null);
   }
 
-  buildEmailContent(): string {
+  buildEmailContent(): FormPayload {
+    /*
     const user = this.selectedUser();
     let content = 'name: ' + user + '\n';
+    */
+
+    const content: FormPayload = {};
+    content['name'] = this.selectedUser();
 
     this.games().forEach(game => {
       const tip = this.tips().find(t => t.gameId === game.id);
       const selectionText = tip ? this.getTipText(game.id): 'None';
-      content += `${game.id}: ${selectionText}\n`;
+      //content += `${game.id}: ${selectionText}\n`;
+      content[game.id] = selectionText;
     });
 
     if (this.bets().length > 0) {
       this.bets().forEach((bet, index) => {
-        content += `Bet${index + 1}: `;
+        //content += `Bet${index + 1}: `;
+        const key = `Bet${index + 1}`;
+        let value = ``;
         let multi: boolean = false;
         bet.outcomes.forEach(o => {
           const game = this.getGameById(o.gameId);
           if (game) {
             if (multi) {
-              content += ',';
+              //content += ',';
+              value += ',';
             }
-            content += `${o.teamName}`
+            //content += `${o.teamName}`
+            value += `${o.teamName}`;
             multi = true;
           }
         });
-        content += ` $${bet.stake} @ ${bet.totalOdds.toFixed(2)}\n`;
+        //content += ` $${bet.stake} @ ${bet.totalOdds.toFixed(2)}\n`;
+        value += ` $${bet.stake} @ ${bet.totalOdds.toFixed(2)}`;
+        content[key] = value;
       });
     }
     if (this.sledging !== '') {
-      content += `Sledging: ` + this.sledging + `\n`;
+      //content += `Sledging: ` + this.sledging + `\n`;
+      content['sledging'] = this.sledging;
     }
+
+    //content += `_subject: Round ` + this.round + ` tips\n`;
+    content['_subject'] = `Round ` + this.round + ` tips`;
+    content['_captcha'] = 'false';
 
     return content;
   }
@@ -337,7 +358,24 @@ export class TipentryComponent implements OnInit {
 
     console.log(this.buildEmailContent());
 
-    this.submissionSuccess.set(true);
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    });
+
+    this.http.post(this.formsUrl, this.buildEmailContent(), { headers: headers})
+      .subscribe({
+        next: (response) => {
+          if (response && (response as any).success === 'true') {
+            this.submissionSuccess.set(true);
+            this.submissionMessage.set('Submitted');
+          }
+          else {
+            this.submissionSuccess.set(false);
+            this.submissionMessage.set('Failed');
+          }
+        }
+      });
   }
 
   previousRound(): void {
