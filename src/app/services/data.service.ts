@@ -57,6 +57,25 @@ export interface LastMet {
   games: LastMetGames[];
 }
 
+export interface LastAtGroundGames {
+  round: string;
+  year: string;
+  team: string;
+  teamscore: string;
+  opp: string;
+  oppscore: string;
+  result: string;
+  winner: string;
+}
+
+export interface LastAtGround {
+  id: number;
+  team: string;
+  ground: string;
+  results: string;
+  games: LastAtGroundGames[];
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -103,6 +122,20 @@ export class DataService {
             ...record,
             id: index + 1
           } as LastMet;
+        });
+      })
+    );
+  }
+
+  getLastGamesAtGround(): Observable<LastAtGround[]> {
+    const lastatgroundUrl = 'assets/lastgamesatground.json';
+    return this.http.get<LastAtGround[]>(lastatgroundUrl).pipe(
+      map(dataArray => {
+        return dataArray.map((record, index) => {
+          return {
+            ...record,
+            id: index + 1
+          } as LastAtGround;
         });
       })
     );
