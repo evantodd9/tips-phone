@@ -15,7 +15,7 @@ export class AppComponent implements OnInit {
   isMenuOpen: boolean = false;
 
   constructor(private titleService: TitleService) {
-    titleService.setTitle('Tips');
+    titleService.setTitle('Standings');
     this.title = titleService.title$;
   }
 

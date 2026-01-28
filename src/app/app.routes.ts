@@ -4,6 +4,7 @@ import { RoundTotalsComponent } from './components/round-totals/round-totals.com
 import { TipentryComponent } from './components/tipentry/tipentry.component';
 import { LastmeetingComponent } from './components/lastmeeting/lastmeeting.component';
 import { LastatgroundComponent } from './components/lastatground/lastatground.component';
+import { RiskComponent } from './components/risk/risk.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -11,5 +12,6 @@ export const routes: Routes = [
   { path: 'results', component: RoundTotalsComponent},
   { path: 'tips', component: TipentryComponent},
   { path: 'lastmet', component: LastmeetingComponent},
-  { path: 'lastatground', component: LastatgroundComponent}
+  { path: 'lastatground', component: LastatgroundComponent},
+  { path: 'risk', component: RiskComponent}
 ];

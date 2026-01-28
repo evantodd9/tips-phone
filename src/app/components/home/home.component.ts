@@ -25,7 +25,7 @@ export class HomeComponent implements OnInit {
     this.dataService.getTipsTotal().subscribe(items => {
       this.tipsTotal = items;
     });
-    this.titleService.setTitle('Tips');
+    this.titleService.setTitle('Standings');
     this.loser = 'assets/losers/' + this.masterService.getLoser() + '.jpg';
   }
 

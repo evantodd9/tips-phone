@@ -76,6 +76,40 @@ export interface LastAtGround {
   games: LastAtGroundGames[];
 }
 
+export interface Risk {
+  id: number;
+  user: string;
+  home: number;
+  away: number;
+  favourite: number;
+  outsider: number;
+  homecorrect: number;
+  awaycorrect: number;
+  favouritecorrect: number;
+  outsidercorrect: number;
+  favbet: number;
+  favreturn: number;
+  outsiderbet: number;
+  outsiderreturn: number;
+}
+
+export interface RiskStandard {
+  id: number;
+  user: string;
+  home: number;
+  away: number;
+  favourite: number;
+  outsider: number;
+  homecorrect: number;
+  awaycorrect: number;
+  favouritecorrect: number;
+  outsidercorrect: number;
+  favbet: number;
+  favreturn: number;
+  outsiderbet: number;
+  outsiderreturn: number;
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -140,4 +174,15 @@ export class DataService {
       })
     );
   }
+
+  getRisk(): Observable<Risk[]> {
+    const riskUrl = 'assets/risk.json';
+    return this.http.get<Risk[]>(riskUrl);
+  }
+
+  getRiskStandard(): Observable<RiskStandard[]> {
+    const riskUrl = 'assets/riskstandard.json';
+    return this.http.get<RiskStandard[]>(riskUrl);
+  }
+
 }
