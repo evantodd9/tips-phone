@@ -23,6 +23,11 @@ export interface RoundTotals {
   return: number;
 }
 
+export interface Round {
+  round: string;
+  games: Game[];
+}
+
 export interface Game {
   home: string;
   away: string;
@@ -133,12 +138,12 @@ export class DataService {
     return this.http.get<Master>(masterUrl);
   }
 
-  getTipRound(round: number): Observable<Game[]> {
-    const gameUrl = 'assets/round' + round + '.json';
-    return this.http.get<Game[]>(gameUrl);
+  getTipRound(round: number): Observable<Round> {
+    const roundUrl = 'assets/rnd' + round + '.json';
+    return this.http.get<Round>(roundUrl);
   }
 
-  getTipRoundAsPromise(round: number): Promise<Game[]> {
+  getTipRoundAsPromise(round: number): Promise<Round> {
     return firstValueFrom(this.getTipRound(round));
   }
 

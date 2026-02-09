@@ -126,15 +126,15 @@ export class TipentryComponent implements OnInit {
     this.dataService.getTipsTotal().subscribe(items => {
       this.userDetails = items;
     });
-    this.titleService.setTitle('Round ' + this.round + ' Tips');
     this.loadGames();
   }
 
   async loadGames(): Promise<void> {
-    const games = await this.dataService.getTipRoundAsPromise(this.round);
+    const currentRound = await this.dataService.getTipRoundAsPromise(this.round);
+    this.titleService.setTitle(currentRound.round + ' Tips');
     const rnd : TipGame[] = [];
     var i = 1;
-    for (var g of games) {
+    for (var g of currentRound.games) {
       var id = 'Tip' + i.toString();
       var gm = new TipGame(id, g.date, g.home, g.away, g.ground, {home: g.hprice, away: g.aprice});
       rnd.push(gm);
