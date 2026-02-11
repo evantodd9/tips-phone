@@ -185,9 +185,9 @@ export class DataService {
     return this.http.get<Risk[]>(riskUrl);
   }
 
-  getRiskStandard(): Observable<RiskStandard[]> {
+  getRiskStandard(): Observable<RiskStandard> {
     const riskUrl = 'assets/riskstandard.json';
-    return this.http.get<RiskStandard[]>(riskUrl);
+    return this.http.get<RiskStandard>(riskUrl);
   }
 
 }

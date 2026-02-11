@@ -12,7 +12,7 @@ import { NgFor, CommonModule } from '@angular/common';
 export class RiskComponent implements OnInit {
 
   risk: Risk[] = [];
-  riskstandard: RiskStandard[] = [];
+  riskstandard: RiskStandard = {} as RiskStandard;
   view = signal<'tips' | 'bets'>('tips');
 
   constructor(
@@ -25,8 +25,8 @@ export class RiskComponent implements OnInit {
     this.dataService.getRisk().subscribe(items => {
       this.risk = items;
     });
-    this.dataService.getRiskStandard().subscribe(items => {
-      this.riskstandard = items;
+    this.dataService.getRiskStandard().subscribe(item => {
+      this.riskstandard = item;
     });
     this.titleService.setTitle('Risk Profile');
   }
