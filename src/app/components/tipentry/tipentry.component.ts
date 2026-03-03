@@ -77,7 +77,7 @@ export class TipentryComponent implements OnInit {
   sledging: string = '';
 
   view = signal<'tips' | 'bets'>('tips');
-  users = signal<string[]>(['ev','punk','purse','smith','tip-o-meter','wigg']);
+  users = signal<string[]>(['anna','ev','punk','purse','smith','tip-o-meter','wigg']);
   games = signal<TipGame[]>([]);
   selectedUser = signal<string | null>(null);
   account : number = 0;
@@ -91,7 +91,6 @@ export class TipentryComponent implements OnInit {
   submissionMessage = signal<string | null>(null);
   submissionSuccess = signal<boolean>(false);
 
-  //private formsUrl = 'https://formsubmit.co/ajax/8eec11a7bd82a5cceffee51c2e6149e4';
   private formsUrl = 'https://formsubmit.co/ajax/ejt@qad.com';
   private userDetails : TipsTotal[] = [];
 
@@ -322,6 +321,7 @@ export class TipentryComponent implements OnInit {
 
     content['_subject'] = `Round ` + this.round + ` footy tips - ` + this.selectedUser();
     content['_captcha'] = 'false';
+    content['_cc'] = `evantodd9@gmail.com,dr.alex.e.smith@gmail.com,adamwigg@gmail.com,steven.purse@gmail.com,sam.wigg@harrisre.com.au,torismith13@icloud.com`
 
     return content;
   }
