@@ -3,6 +3,7 @@ import { DataService, TipsTotal } from '../../services/data.service';
 import { NgFor, CommonModule } from '@angular/common';
 import { TitleService } from '../../services/title.service';
 import { MasterService } from '../../services/master.service';
+import { LoserComponent } from '../loser/loser.component';
 
 @Component({
   selector: 'app-tips-total',
@@ -26,7 +27,7 @@ export class HomeComponent implements OnInit {
       this.tipsTotal = items;
     });
     this.titleService.setTitle('Standings');
-    this.loser = 'assets/losers/' + this.masterService.getLoser() + '.jpg';
+    //this.loser = 'assets/losers/' + this.masterService.getLoser() + '.jpg';
   }
 
 

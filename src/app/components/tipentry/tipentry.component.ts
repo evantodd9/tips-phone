@@ -20,6 +20,9 @@ class TipGame {
   homeTeam: string;
   awayTeam: string;
   ground: string;
+  starttime: string;
+  defaulttip: Team;
+  expired: boolean;
   odds: {
     home: number;
     away: number;
@@ -31,6 +34,7 @@ class TipGame {
     homeTeam: string,
     awayTeam: string,
     ground: string,
+    starttime: string,
     odds: {
       home: number,
       away: number
@@ -42,6 +46,14 @@ class TipGame {
     this.awayTeam = awayTeam;
     this.ground = ground;
     this.odds = odds;
+    this.starttime = starttime;
+    this.expired = (Date.now() > (new Date(this.starttime).getTime()) + 3600000);
+    if (odds.home <= odds.away) {
+      this.defaulttip = 'home' as Team;
+    }
+    else {
+      this.defaulttip = 'away' as Team;
+    }
   }
 }
 
@@ -135,7 +147,7 @@ export class TipentryComponent implements OnInit {
     var i = 1;
     for (var g of currentRound.games) {
       var id = 'Tip' + i.toString();
-      var gm = new TipGame(id, g.date, g.home, g.away, g.ground, {home: g.hprice, away: g.aprice});
+      var gm = new TipGame(id, g.date, g.home, g.away, g.ground, g.starttime, {home: g.hprice, away: g.aprice});
       rnd.push(gm);
       i++;
     }
@@ -156,6 +168,13 @@ export class TipentryComponent implements OnInit {
     }
     this.tips.set([]);
     this.bets.set([]);
+
+    this.games().forEach(game => {
+      if (game.expired) {
+        this.toggleTip(game.id, game.defaulttip);
+      }
+    });
+
   }
 
   getTipText(gameId: string): string {

@@ -46,7 +46,7 @@
               <!-- Home Tip -->
               <button (click)="toggleTip(game.id, 'home')"
                       [ngClass]="{'bg-indigo-600 text-white shadow-xl ring-2 ring-indigo-400': isTipped(game.id, 'home'), 'bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 hover:bg-indigo-100 dark:hover:bg-indigo-900': !isTipped(game.id, 'home')}"
-                      [disabled]="!selectedUser()"
+                      [disabled]="!selectedUser() || game.expired"
                       class="p-3 text-sm font-semibold rounded-lg transition duration-150 ease-in-out disabled:opacity-50 disabled:cursor-not-allowed">
                 {{ game.homeTeam }} ({{ game.odds.home }})
               </button>
@@ -54,7 +54,7 @@
               <!-- Away Tip -->
               <button (click)="toggleTip(game.id, 'away')"
                       [ngClass]="{'bg-indigo-600 text-white shadow-xl ring-2 ring-indigo-400': isTipped(game.id, 'away'), 'bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 hover:bg-indigo-100 dark:hover:bg-indigo-900': !isTipped(game.id, 'away')}"
-                      [disabled]="!selectedUser()"
+                      [disabled]="!selectedUser() || game.expired"
                       class="p-3 text-sm font-semibold rounded-lg transition duration-150 ease-in-out disabled:opacity-50 disabled:cursor-not-allowed">
                 {{ game.awayTeam }} ({{ game.odds.away }})
               </button>
@@ -159,7 +159,7 @@
                       'bg-indigo-500 text-white': isOutcomeInSlip(game.id, outcome.team),
                       'bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 hover:bg-indigo-100 dark:hover:bg-indigo-900': !isOutcomeInSlip(game.id, outcome.team)
                     }"
-                    [disabled]="!selectedUser()"
+                    [disabled]="!selectedUser() || game.expired"
                     class="p-2 text-xs font-semibold rounded-lg transition duration-150 disabled:opacity-50 disabled:cursor-not-allowed">
                     {{ outcome.name }} ({{ outcome.odds }})
                   </button>

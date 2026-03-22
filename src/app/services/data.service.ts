@@ -35,6 +35,7 @@ export interface Game {
   hprice: number;
   aprice: number;
   ground: string;
+  starttime: string;
 }
 
 export interface User {
