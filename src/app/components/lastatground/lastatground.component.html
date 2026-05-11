@@ -30,10 +30,10 @@
            [ngClass]="{ 'border-b border-dashed border-gray-300 mb-3': !isLast }">
 
         <div class="grid grid-cols-2">
-          <p class="text-sm text-gray-500">{{ child.round }} {{ child.year }}</p><p></p>
+          <p class="text-sm text-gray-500">{{ child.round }}</p><p></p>
           <p class="font-semibold">{{ child.team }}</p>
           <p class="font-semibold">{{ child.opp }}</p>
-          <p>{{ child.teamscore }}</p>
+          <p>{{ child.tscore }}</p>
           <p>{{ child.oppscore }}</p>
           <p class="font-semibold text-lg">
             <span [ngClass]="{'text-blue-600': child.winner === child.team,

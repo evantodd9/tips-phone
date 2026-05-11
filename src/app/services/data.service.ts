@@ -67,7 +67,7 @@ export interface LastAtGroundGames {
   round: string;
   year: string;
   team: string;
-  teamscore: string;
+  tscore: string;
   opp: string;
   oppscore: string;
   result: string;
