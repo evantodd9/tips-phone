@@ -18,6 +18,21 @@ export class MasterService {
     this.loser = '';
   }
 
+  // Temporary while on holiday
+  getWeeklyValue(): number {
+    const now = new Date();
+
+    const startDate = new Date(2026, 4, 4);
+
+    // Calculate the difference in milliseconds
+    const diffInMs = now.getTime() - startDate.getTime();
+
+    // Convert milliseconds to weeks
+    const weeksPassed = Math.floor(diffInMs / (1000 * 60 * 60 * 24 * 7));
+
+    return 9 + weeksPassed;
+  }
+
   initialize(): void {
     this.dataService.getMaster().subscribe(
       {
@@ -41,7 +56,8 @@ export class MasterService {
   }
 
   getRound(): number {
-    return this.round;
+    return this.getWeeklyValue();
+    //return this.round;
   }
 
   getMax(): number {
