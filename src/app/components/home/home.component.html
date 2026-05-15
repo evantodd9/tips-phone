@@ -1,4 +1,9 @@
 <div class="overflow-x-auto">
+  <div *ngIf="showMessage" class="announcement-window" [class.fade-out]="isFadingOut">
+    <div class="content">
+      <p>No updates for a few weeks while I'm away</p>
+    </div>
+  </div>
   <table class="w-full text-left table-auto min-w-max">
     <thead>
     <tr>

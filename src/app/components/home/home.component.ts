@@ -14,6 +14,8 @@ import { LoserComponent } from '../loser/loser.component';
 export class HomeComponent implements OnInit {
   tipsTotal: TipsTotal[] = [];
   loser: string = '';
+  showMessage: boolean = true;
+  isFadingOut: boolean = false;
 
   constructor(
     private dataService: DataService,
@@ -28,7 +30,16 @@ export class HomeComponent implements OnInit {
     });
     this.titleService.setTitle('Standings');
     //this.loser = 'assets/losers/' + this.masterService.getLoser() + '.jpg';
+    setTimeout(() => {
+      this.closeMessage();
+    },5000);
   }
 
+  closeMessage() {
+    this.isFadingOut = true;
 
+    setTimeout(() => {
+      this.showMessage = false;
+    }, 1000);
+  }
 }
