@@ -6,11 +6,12 @@
         Name:
       </label>
       <select id="userSelect"
-              (change)="selectUser($event)"
+              [ngModel]="selectedUser()"
+              (ngModelChange)="selectUser($event)"
               class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white">
-        <option value="" disabled selected [attr.selected]="!selectedUser()">Select your name</option>
+        <option [ngValue]="null" disabled selected [attr.selected]="!selectedUser()">Select your name</option>
         @for (user of users(); track user) {
-          <option [value]="user">{{ user }}</option>
+          <option [ngValue]="user">{{ user }}</option>
         }
       </select>
     </div>
