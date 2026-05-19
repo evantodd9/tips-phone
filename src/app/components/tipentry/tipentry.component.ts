@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, computed, signal, OnInit, inject, effect } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, signal, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TitleService } from '../../services/title.service';
 import { DataService, TipsTotal } from '../../services/data.service';
@@ -91,7 +91,7 @@ export class TipentryComponent implements OnInit {
   view = signal<'tips' | 'bets'>('tips');
   users = signal<string[]>(['anna','ev','punk','purse','smith','tip-o-meter','wigg']);
   games = signal<TipGame[]>([]);
-  selectedUser = signal<string | null>(localStorage.getItem('user'));
+  selectedUser = signal<string | null>(null);
   account : number = 0;
 
   tips = signal<UserTip[]>([]);
@@ -128,12 +128,7 @@ export class TipentryComponent implements OnInit {
     private dataService: DataService,
     private titleService: TitleService,
     private masterService: MasterService,
-    private http: HttpClient) {
-
-    effect(() => {
-      localStorage.setItem('user', this.selectedUser() || '');
-    });
-  }
+    private http: HttpClient) {}
 
   ngOnInit(): void {
     this.round = this.masterService.getRound();
@@ -160,10 +155,11 @@ export class TipentryComponent implements OnInit {
     this.games.set(rnd);
   }
 
-  selectUser(newValue: string | null) {
-    this.selectedUser.set(newValue);
+  selectUser(event: Event) {
+    const target = event.target as HTMLSelectElement;
+    this.selectedUser.set(target.value);
     this.submissionMessage.set(null);
-    var userDetail : TipsTotal | undefined = this.userDetails.find(u => u.name === newValue);
+    var userDetail : TipsTotal | undefined = this.userDetails.find(u => u.name === target.value);
     if (userDetail) {
       this.account = userDetail.amount;
     }
