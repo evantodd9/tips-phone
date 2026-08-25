@@ -87,6 +87,7 @@ export class TipentryComponent implements OnInit {
   min: number = 1;
   max: number = 26;
   sledging: string = '';
+  roundtitle: string = '';
 
   view = signal<'tips' | 'bets'>('tips');
   users = signal<string[]>(['anna','ev','punk','purse','smith','tip-o-meter','wigg']);
@@ -142,7 +143,8 @@ export class TipentryComponent implements OnInit {
 
   async loadGames(): Promise<void> {
     const currentRound = await this.dataService.getTipRoundAsPromise(this.round);
-    this.titleService.setTitle(currentRound.round + ' Tips');
+    this.roundtitle = currentRound.round + ' Tips';
+    this.titleService.setTitle(this.roundtitle);
     const rnd : TipGame[] = [];
     var i = 1;
     for (var g of currentRound.games) {
@@ -338,7 +340,7 @@ export class TipentryComponent implements OnInit {
       content['sledging'] = this.sledging;
     }
 
-    content['_subject'] = `Round ` + this.round + ` footy tips - ` + this.selectedUser();
+    content['_subject'] = this.roundtitle + ` footy tips - ` + this.selectedUser();
     content['_captcha'] = 'false';
     content['_cc'] = `evantodd9@gmail.com,dr.alex.e.smith@gmail.com,adamwigg@gmail.com,steven.purse@gmail.com,sam.wigg@harrisre.com.au,torismith13@icloud.com`
 

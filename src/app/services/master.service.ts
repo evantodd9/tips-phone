@@ -56,8 +56,8 @@ export class MasterService {
   }
 
   getRound(): number {
-    return this.getWeeklyValue();
-    //return this.round;
+    //return this.getWeeklyValue();
+    return this.round;
   }
 
   getMax(): number {
